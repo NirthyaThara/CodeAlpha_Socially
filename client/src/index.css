@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+  --socially-mint: #E0F7F9;
+  --socially-teal: #78D5D7;
+  --socially-dark: #2D3142;
+  --socially-gray: #BFC0C0;
+  --socially-white: #FFFFFF;
+  --socially-soft-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --socially-gradient: linear-gradient(135deg, #E0F7F9 0%, #FFFFFF 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background-color: var(--socially-mint);
+  color: var(--socially-dark);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.socially-card {
+  background: var(--socially-white);
+  border-radius: 30px;
+  box-shadow: var(--socially-soft-shadow);
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.socially-btn {
+  background: var(--socially-dark);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.socially-btn-outline {
+  background: transparent;
+  border: 2px solid var(--socially-dark);
+  color: var(--socially-dark);
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.socially-input {
+  background: #F4F9F9;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.socially-input:focus {
+  outline: 2px solid var(--socially-teal);
+}
+
+.socially-gradient-bg {
+  background: var(--socially-gradient);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Navbar container */
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  background: var(--socially-dark);
+  height: 70px;
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.nav-item.active {
+  color: var(--socially-teal);
+}
+
+.search-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: transparent;
+}
+
+.story-container {
+  padding: 10px 20px;
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.stories-container {
+  padding: 15px 20px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  align-items: center;
+}
+
+.story-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.story-bubble span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--socially-dark);
+}
+
+.story-img-container {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 3px solid var(--socially-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: transform 0.2s;
+}
+
+.story-bubble:hover .story-img-container {
+  transform: scale(1.05);
+}
+
+.story-circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  padding: 3px;
+  border: 2px solid var(--socially-teal);
+  flex-shrink: 0;
+}
+
+.story-circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fab-add {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: -40px;
+  color: var(--socially-dark);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.fab-add:hover {
+  transform: scale(1.1);
+}
+
+/* --- Responsive Desktop Styles --- */
+@media (min-width: 768px) {
+  body {
+    background-color: #F0F2F5;
+    /* Slightly different background for desktop context */
+  }
+
+  /* Main Layout Grid */
+  .app-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    padding-top: 20px;
+    min-height: 100vh;
+  }
+
+  /* Navigation becomes Sidebar */
+  .bottom-nav {
+    position: sticky;
+    top: 20px;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: calc(100vh - 40px);
+    max-width: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .nav-item {
+    flex-direction: row;
+    font-size: 1.1rem;
+    gap: 15px;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 15px;
+    transition: background 0.2s;
+  }
+
+  .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-item span {
+    display: inline;
+    /* Show text labels on desktop */
+  }
+
+  .fab-add {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    padding: 15px;
+    background: var(--socially-teal);
+    color: white;
+    font-weight: 700;
+    gap: 10px;
+    box-shadow: none;
+  }
+
+  .fab-add::after {
+    content: "Create Post";
+  }
+
+  /* Main Feed Column */
+  .main-content {
+    max-width: none !important;
+    /* Override inline styles */
+    margin: 0 !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Right Sidebar (Suggestions) */
+  .right-sidebar {
+    display: block;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+  }
+}
+
+/* Hide right sidebar on mobile */
+@media (max-width: 767px) {
+  .app-layout {
+    display: block;
+  }
+
+  .nav-item span {
+    display: none;
+  }
+
+  .right-sidebar {
+    display: none;
+  }
+
+  /* Ensure mobile content is centered */
+  .main-content {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+
+  .chat-container {
+    height: 100vh;
+    border-radius: 0;
+    margin: -20px -20px 0 -20px;
+    /* Counteract main-content padding if any, or just sit top */
+  }
+}
