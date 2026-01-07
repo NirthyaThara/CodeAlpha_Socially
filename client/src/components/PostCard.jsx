@@ -41,7 +41,7 @@ const PostCard = ({ post, user, onUpdate }) => {
 
     const handleUpdate = async () => {
         try {
-            await postAPI.update(post._id, { content: editContent }); // Pass content as an object
+            await postAPI.update(post._id, editContent); // Pass content string directly
             setIsEditing(false);
             if (onUpdate) onUpdate();
         } catch (err) {

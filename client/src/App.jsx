@@ -11,7 +11,10 @@ import CreatePostModal from './components/CreatePostModal';
 import './index.css';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
   // const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
   const [showPostModal, setShowPostModal] = useState(false);
 
@@ -53,7 +56,7 @@ function App() {
                 <div style={{ color: 'var(--socially-gray)', fontSize: '0.9rem' }}>
                   <p style={{ marginBottom: '10px' }}>Connect with more people to see their posts here!</p>
                 </div>
-                <button className="socially-btn" onClick={() => window.location.href = '/users'} style={{ width: '100%', marginTop: '10px' }}>
+                <button className="socially-btn" disabled style={{ width: '100%', marginTop: '10px', opacity: 0.6, cursor: 'not-allowed' }}>
                   Find People
                 </button>
               </div>
