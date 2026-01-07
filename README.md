@@ -1,6 +1,6 @@
 # CodeAlpha_# SocialNetwork
 
-**Live Demo:** [https://codealpha-socially.onrender.com]
+**Live Demo:** [https://socially-5t14.onrender.com/]
 
 ## Project Overview
 **SocialNetwork** is a full-stack social media application designed to allow users to connect, share content, and communicate. Users can register, create profiles, post text and images, like/share/save posts, follow other users, and chat with them in real-time.
