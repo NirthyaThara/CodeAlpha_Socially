@@ -24,3 +24,7 @@ The project is built using the **MERN Stack**:
 ## Directory Structure
 - **client/**: React frontend application.
 - **server/**: Node.js/Express backend API.
+
+## Credentials
+- **User/**:abc@gmail.com
+- **Password/**:abc@123
